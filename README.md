@@ -1,38 +1,66 @@
+
 # Algoritmo de Dijkstra em C
-Este repositório contém uma implementação do algoritmo de Dijkstra em linguagem C, desenvolvido como parte de um trabalho acadêmico. O algoritmo de Dijkstra é uma técnica clássica de teoria dos grafos, utilizada para encontrar o caminho mais curto entre um vértice de origem e os demais vértices de um grafo ponderado e direcionado.
+Este repositório contém uma implementação do algoritmo de Dijkstra, desenvolvido em linguagem C, como parte de um projeto acadêmico. O algoritmo de Dijkstra é uma solução eficiente para encontrar o caminho mais curto entre um nó de origem e todos os outros nós em um grafo ponderado e direcionado.
 
-O que é o Algoritmo de Dijkstra?
-Criado por Edsger W. Dijkstra em 1956, este algoritmo é amplamente utilizado em redes de computadores e sistemas de navegação GPS, entre outras aplicações. Ele funciona assumindo um conjunto de nós ou vértices conectados por arestas, onde cada aresta tem um peso ou custo associado. O objetivo do algoritmo é calcular o menor caminho total da origem até um determinado destino ou até todos os outros vértices do grafo.
+Descrição do Algoritmo
+O algoritmo de Dijkstra foi proposto por Edsger W. Dijkstra em 1956 e é amplamente utilizado em várias aplicações, como roteamento de redes, sistemas de navegação GPS e análise de grafos. O algoritmo é baseado em uma abordagem gulosa (greedy), onde itera sobre os nós do grafo, atualizando progressivamente as distâncias mais curtas encontradas a partir do nó de origem até os outros nós.
 
-Como o Algoritmo Funciona?
-Inicialização: Começa-se definindo a distância da origem a si mesma como zero e todas as outras distâncias como infinitas.
+Funcionamento
+Inicialização: O algoritmo começa definindo a distância do nó de origem para ele mesmo como zero, enquanto todas as outras distâncias são inicialmente definidas como infinitas.
 
-Exploração dos Vértices: Iterativamente, escolhe-se o vértice com a menor distância acumulada, atualizando as distâncias de seus vizinhos.
+Exploração dos Nós: Seleciona-se o nó com a menor distância acumulada que ainda não foi visitado. Este nó é então considerado como o nó atual.
 
-Atualização das Distâncias: Para cada vizinho do vértice atual, calcula-se a possível nova distância (soma da distância atual e o peso da aresta para o vizinho). Se essa nova distância for menor do que a conhecida anteriormente, ela é atualizada.
+Atualização das Distâncias: Para cada vizinho do nó atual, calcula-se a distância total do nó de origem até ele através do nó atual. Se esta nova distância for menor do que a distância conhecida anteriormente, ela é atualizada.
 
-Repetição: O processo é repetido até que todos os vértices tenham sido visitados ou a menor distância para o destino tenha sido encontrada.
+Iteração: Repete-se o processo até que todos os nós tenham sido visitados ou que o caminho mais curto para o destino específico tenha sido encontrado.
 
+Complexidade
+Usando Matriz de Adjacência: O algoritmo tem uma complexidade de tempo de 
+𝑂
+(
+𝑉
+2
+)
+O(V 
+2
+ ), onde 
+𝑉
+V é o número de vértices.
+Usando Lista de Adjacência e Fila de Prioridade: A complexidade melhora para 
+𝑂
+(
+(
+𝑉
++
+𝐸
+)
+log
+⁡
+𝑉
+)
+O((V+E)logV), onde 
+𝐸
+E é o número de arestas.
 Estrutura do Código
-Entrada: Um grafo representado por uma matriz de adjacência ou lista de adjacência, e o vértice inicial.
-Saída: O menor caminho do vértice inicial para todos os outros vértices, ou um vértice específico.
-Complexidade: O algoritmo de Dijkstra tem complexidade O(V^2) para grafos densos quando implementado com matrizes de adjacência, e O((V + E) log V) com listas de adjacência e filas de prioridade.
+Entrada: O programa recebe um grafo representado por uma matriz de adjacência ou lista de adjacência, e o vértice inicial.
+Saída: A saída do programa é o menor caminho do vértice inicial para todos os outros vértices no grafo.
 Requisitos
-Compilador C (GCC, por exemplo)
-Conhecimento básico em manipulação de grafos e estruturas de dados em C
+Um compilador C, como GCC.
+Conhecimento básico em estruturas de dados e manipulação de grafos.
 Como Executar
+
 Clone o repositório:
-
-bash
-Copiar código
 git clone <link_do_repositorio>
-Compile o código:
 
-Copiar código
+Compile o código fonte:
 gcc dijkstra.c -o dijkstra
-Execute o programa:
 
-bash
-Copiar código
+Execute o programa:
 ./dijkstra
-Este projeto é uma excelente oportunidade para entender conceitos fundamentais de algoritmos e estruturas de dados, aplicando-os a problemas reais de otimização de rotas e redes.
+
+Contribuições
+Contribuições são bem-vindas! Se você deseja melhorar o código ou adicionar novas funcionalidades, sinta-se à vontade para enviar um pull request.
+
+Licença
+Este projeto está licenciado sob a licença MIT. Consulte o arquivo LICENSE para mais detalhes.
+
